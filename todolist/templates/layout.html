@@ -1,16 +1,20 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 {% load static %}
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <title>
             {% block title %}
-                Todo List
+                To Do List
             {% endblock %}
         </title>
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
     <body>
+
+        <nav>
+            <a href="/"> Home </a>
+            <a href="/tasks">Tasks</a>
         {% block content %}
         {% endblock %}
     </body>
