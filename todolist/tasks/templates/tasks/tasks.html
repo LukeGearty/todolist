@@ -13,12 +13,18 @@
         <button type="submit">Add Task</button>
     </form>
 
+    <h2>List of Tasks</h2>
     <ul>
         {% for task in tasks %}
-        <li>{{ task.name }} - {{ task.description }}</li>
+            {% if not task.completed %}
+                <li>{{ task.date_started|date:"Y-m-d" }} - {{ task.name }} - {{ task.description }} - <a href="{% url 'complete_task' task.id %}">Complete</a></li>
+            {% endif %}
         {% empty %}
             <li>No Tasks Available</li>
         {% endfor %}
     </ul>
+    
+
+    <a href="completed">See tasks you completed here</a>
 
 {% endblock %}

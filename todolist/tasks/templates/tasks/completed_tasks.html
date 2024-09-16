@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Completed Tasks
+{% endblock %}
+
+{% block content %}
+    <h1>Completed Tasks</h1>
+
+    <ul>
+        {% for task in tasks %}
+        <li>{{ task.date_completed|date:"Y-m-d" }} - {{ task.name }}</li>
+        {% empty %}
+            <li>No Tasks Available</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
